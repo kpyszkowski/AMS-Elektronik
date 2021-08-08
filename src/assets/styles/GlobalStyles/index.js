@@ -53,7 +53,7 @@ export const Container = styled.section`
 			height: 80vh;
 			background: linear-gradient(
 				180deg,
-				rgba(220, 20, 60, 0.15) 50%,
+				hsla(222, 80%, 56%, 0.15) 50%,
 				transparent 100%
 			);
 			clip-path: circle(50% at 50% 50%);

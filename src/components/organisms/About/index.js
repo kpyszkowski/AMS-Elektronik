@@ -38,7 +38,11 @@ const StyledContentWrapper = styled.div`
 		content: '';
 		width: 4px;
 		height: 100%;
-		background: linear-gradient(to bottom, crimson 60%, whitesmoke 100%);
+		background: linear-gradient(
+			to bottom,
+			hsl(222, 80%, 56%) 60%,
+			whitesmoke 100%
+		);
 		z-index: 1;
 	}
 

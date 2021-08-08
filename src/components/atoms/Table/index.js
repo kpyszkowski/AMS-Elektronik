@@ -10,7 +10,7 @@ const StyledTable = styled.table`
 	margin: 0 auto;
 
 	thead {
-		background-color: crimson;
+		background-color: hsl(222, 80%, 56%);
 		color: white;
 		font-weight: bold;
 		text-align: center;
@@ -22,11 +22,11 @@ const StyledTable = styled.table`
 
 	tr {
 		&:nth-child(even) {
-			background-color: rgb(220, 20, 60, 0.1);
+			background-color: hsla(222, 80%, 40%, 0.1);
 		}
 
 		&:nth-child(odd) {
-			background-color: rgb(220, 20, 60, 0.2);
+			background-color: hsla(222, 80%, 40%, 0.2);
 		}
 	}
 

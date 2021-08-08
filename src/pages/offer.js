@@ -47,7 +47,7 @@ const StyledHeading = styled(Heading)`
 
 const OfferIntro = styled(Container)`
 	position: relative;
-	background-color: hsl(349deg 86% 50% / 8%);
+	background-color: hsla(222, 80%, 56%, 0.08);
 	padding-top: calc(175px + 5%);
 	padding-bottom: 10%;
 	clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);

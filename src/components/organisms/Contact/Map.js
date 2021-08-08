@@ -27,7 +27,7 @@ const Map = () => {
 
 		setMap(map);
 
-		const marker = new mapboxgl.Marker({ color: '#dc143c' })
+		const marker = new mapboxgl.Marker({ color: '#356be9' })
 			.setLngLat([15.693038150000005, 52.2594941])
 			.addTo(map);
 

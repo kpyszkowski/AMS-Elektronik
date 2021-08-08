@@ -40,7 +40,7 @@ const StyledIndicator = styled.span`
 	display: block;
 	width: calc(100% - 60px);
 	height: 2px;
-	background-color: crimson;
+	background-color: hsl(222, 80%, 56%);
 	position: absolute;
 	left: 30px;
 	bottom: 10px;

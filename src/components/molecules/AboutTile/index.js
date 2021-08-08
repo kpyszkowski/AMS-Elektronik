@@ -86,8 +86,8 @@ const StyledContainer = styled.div`
 		height: 42px;
 		background: radial-gradient(
 			whitesmoke 8px,
-			crimson 9px,
-			crimson 12px,
+			hsl(222, 80%, 56%) 9px,
+			hsl(222, 80%, 56%) 12px,
 			whitesmoke 13px,
 			whitesmoke 42px
 		);

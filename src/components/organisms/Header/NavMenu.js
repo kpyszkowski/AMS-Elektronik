@@ -69,7 +69,7 @@ const StyledLink = styled(Link)`
 		width: 6px;
 		height: 6px;
 		border-radius: 50%;
-		background: crimson;
+		background: hsl(222, 80%, 56%);
 		position: relative;
 		bottom: 35px;
 		left: calc((100% / 2) - 3px);

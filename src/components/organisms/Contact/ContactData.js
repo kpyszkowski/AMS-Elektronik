@@ -56,7 +56,7 @@ const StyledHeading = styled(Heading)`
 		content: '';
 		width: calc(100% + 40px);
 		height: 1px;
-		background-color: crimson;
+		background-color: hsl(222, 80%, 56%);
 		top: 50%;
 		position: absolute;
 		left: -20px;

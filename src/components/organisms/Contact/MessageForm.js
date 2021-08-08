@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
 
 import Input from '../../atoms/Input';
 import Button from '../../atoms/Button';
@@ -14,16 +13,43 @@ const StyledContainer = styled.form`
 `;
 
 const MessageForm = () => {
+	const [isPosting, setIsPosting] = useState(false);
+	const [postingError, setPostingError] = useState(false);
+	const [postingSuccess, setPostingSuccess] = useState(false);
+
 	const { register, handleSubmit } = useForm();
-	const onSubmit = (data) => {
-		axios
-			.post('/.netlify/functions/sendgrid', data)
-			.then((res) => console.log(res))
-			.catch((err) => console.log(err));
+
+	const sendMessage = async (data) => {
+		setIsPosting(true);
+
+		console.log(JSON.stringify(data));
+
+		try {
+			const res = await fetch('/.netlify/functions/sendmessage', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(data),
+			});
+
+			if (!res.ok) {
+				setPostingError(true);
+			} else {
+				setPostingSuccess(true);
+			}
+		} catch (e) {
+			setPostingError(true);
+		} finally {
+			setIsPosting(false);
+		}
 	};
 
 	return (
-		<StyledContainer onSubmit={handleSubmit(onSubmit)} autoComplete="off">
+		<StyledContainer
+			onSubmit={handleSubmit(sendMessage)}
+			autoComplete="off"
+		>
 			<Input
 				register={register}
 				label="Imię i nazwisko..."

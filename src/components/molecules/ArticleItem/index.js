@@ -9,7 +9,7 @@ import Heading from '../../atoms/Heading';
 const StyledContainer = styled.div`
 	display: flex;
 	background: whitesmoke;
-	border-left: 20px solid crimson;
+	border-left: 20px solid hsl(222, 80%, 56%);
 	border-radius: 20px;
 	position: relative;
 	overflow: hidden;

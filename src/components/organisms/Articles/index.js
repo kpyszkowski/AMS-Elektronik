@@ -16,7 +16,7 @@ const StyledParagraph = styled(Paragraph)`
 
 const StyledContainer = styled(Container)`
 	position: relative;
-	background: hsl(349deg 80% 40% / 50%);
+	background: hsla(222, 80%, 40%, 0.5);
 	color: white;
 	align-items: flex-start;
 
@@ -25,7 +25,7 @@ const StyledContainer = styled(Container)`
 		position: absolute;
 		width: 40%;
 		height: 100%;
-		background: crimson url(${icon}) 75% 50%/50% no-repeat;
+		background: hsl(222, 80%, 56%) url(${icon}) 75% 50%/50% no-repeat;
 		mix-blend-mode: darken;
 		left: -100%;
 		margin: -65px -10vw;

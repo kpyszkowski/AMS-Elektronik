@@ -18,10 +18,10 @@ const StyledList = styled.ul`
 		&::before {
 			content: '';
 			background: radial-gradient(
-				crimson 30%,
+				hsl(222, 80%, 56%) 30%,
 				transparent 35%,
 				transparent 50%,
-				crimson 55%
+				hsl(222, 80%, 56%) 55%
 			);
 			width: 18px;
 			height: 18px;

@@ -9,7 +9,7 @@ const StyledButton = styled.button`
 	font-size: 1em;
 	position: relative;
 	overflow: hidden;
-	background-color: crimson;
+	background-color: hsl(222, 80%, 56%);
 	color: white;
 	padding: 0 30px;
 	min-height: 65px;
@@ -21,8 +21,8 @@ const StyledButton = styled.button`
 		secondary &&
 		css`
 			background-color: transparent;
-			border: 3px solid crimson;
-			color: crimson;
+			border: 3px solid hsl(222, 80%, 56%);
+			color: hsl(222, 80%, 56%);
 			min-width: 0 20px;
 			min-height: 55px;
 			text-align: center;
