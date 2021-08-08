@@ -17,10 +17,7 @@ const MessageForm = () => {
 	const { register, handleSubmit } = useForm();
 	const onSubmit = (data) => {
 		axios
-			.post(
-				'http://localhost:5001/ams-elektronik/us-central1/handleFormMessage',
-				data,
-			)
+			.post('/.netlify/functions/sendgrid', data)
 			.then((res) => console.log(res))
 			.catch((err) => console.log(err));
 	};
