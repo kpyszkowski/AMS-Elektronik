@@ -18,6 +18,11 @@ const StyledContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 18px;
+	flex-basis: 50%;
+
+	&:nth-child(2) {
+		order: 2;
+	}
 
 	@media screen and (min-width: 865px), (min-width: 1200px) {
 		flex-direction: column-reverse;
@@ -27,7 +32,7 @@ const StyledContainer = styled.div`
 
 const StyledWrapper = styled.div`
 	display: flex;
-	flex-direction: ${({ content }) => (content ? 'column' : 'row')};
+	flex-direction: ${({ contentData }) => (contentData ? 'column' : 'row')};
 	position: relative;
 
 	${({ heading }) => heading && css``};
@@ -56,7 +61,7 @@ const StyledHeading = styled(Heading)`
 		content: '';
 		width: calc(100% + 40px);
 		height: 1px;
-		background-color: hsl(222, 80%, 56%);
+		background-color: crimson;
 		top: 50%;
 		position: absolute;
 		left: -20px;
@@ -95,7 +100,7 @@ const ContactData = ({ data }) => {
 					{data.name}
 				</StyledHeading>
 			</StyledWrapper>
-			<StyledWrapper content as="ul">
+			<StyledWrapper contentData as="ul">
 				{data.contactItems.map((item) => (
 					<StyledItemContainer key={item.data}>
 						<StyledIcon item icon={icons[item.icon]} />

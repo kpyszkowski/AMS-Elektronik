@@ -52,7 +52,7 @@ const Articles = () => (
 		<Paragraph secondary>
 			<strong>AMS elektronik</strong> &copy; {new Date().getFullYear()}
 		</Paragraph>
-		<Paragraph secondary>projekt i kodowanie: Kamil Pyszkowski</Paragraph>
+		<Paragraph secondary>projekt i realizacja: Kamil Pyszkowski</Paragraph>
 	</StyledContainer>
 );
 

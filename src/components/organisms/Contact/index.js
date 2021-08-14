@@ -65,6 +65,7 @@ const StyledArea = styled.div`
 
 			@media screen and (min-width: 865px), (min-width: 1200px) {
 				grid-area: 1 / 1 / 2 / 3;
+				flex-wrap: wrap;
 				flex-direction: row;
 			}
 		`}
@@ -79,8 +80,8 @@ const StyledArea = styled.div`
 			}
 		`}
 
-        ${({ form }) =>
-		form &&
+        ${({ messageForm }) =>
+		messageForm &&
 		css`
 			@media screen and (min-width: 865px), (min-width: 1200px) {
 				grid-area: 2 / 2 / 3 / 3;
@@ -167,7 +168,7 @@ const Contact = () => (
 					</StyledParagraph>
 				</StyledAddressWrapper>
 			</StyledArea>
-			<StyledArea form>
+			<StyledArea messageForm>
 				<MessageForm />
 			</StyledArea>
 		</StyledContentWrapper>

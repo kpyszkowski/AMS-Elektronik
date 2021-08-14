@@ -1,21 +1,52 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useForm } from 'react-hook-form';
 
 import Input from '../../atoms/Input';
 import Button from '../../atoms/Button';
+import Heading from '../../atoms/Heading';
+import Paragraph from '../../atoms/Paragraph';
 
 const StyledContainer = styled.form`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	width: 100%;
+	position: relative;
+`;
+
+const MessageConfirmation = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: whitesmoke;
+	visibility: hidden;
+	pointer-events: none;
+	transition: all ease-in-out 0.5s;
+
+	${({ isConfirmationVisible }) =>
+		isConfirmationVisible &&
+		css`
+			visibility: visible;
+			pointer-events: all;
+		`}
+`;
+
+const StyledParagraph = styled(Paragraph)`
+	margin: 18px 0;
 `;
 
 const MessageForm = () => {
 	const [isPosting, setIsPosting] = useState(false);
 	const [postingError, setPostingError] = useState(false);
 	const [postingSuccess, setPostingSuccess] = useState(false);
+	const [isConfirmationVisible, toggleConfirmation] = useState(false);
 
 	const { register, handleSubmit } = useForm();
 
@@ -43,6 +74,8 @@ const MessageForm = () => {
 		} finally {
 			setIsPosting(false);
 		}
+
+		toggleConfirmation(true);
 	};
 
 	return (
@@ -71,6 +104,27 @@ const MessageForm = () => {
 				required
 			/>
 			<Button type="submit">Wyślij wiadomość</Button>
+			<MessageConfirmation isConfirmationVisible={isConfirmationVisible}>
+				<Heading secondary as="h3">
+					{postingSuccess && 'Wiadomość wysłana'}
+					{postingError && 'Wiadomość nie została wysłana'}
+				</Heading>
+				<StyledParagraph>
+					{postingSuccess &&
+						'Dziękujemy za wiadomość, skontaktujemy się z Tobą wkrótce.'}
+					{postingError &&
+						'Spróbuj ponownie lub skorzystaj z innej metody kontaktu.'}
+				</StyledParagraph>
+				{postingError && (
+					<Button
+						type="button"
+						secondary
+						onClick={() => toggleConfirmation(false)}
+					>
+						Spróbuj ponownie
+					</Button>
+				)}
+			</MessageConfirmation>
 		</StyledContainer>
 	);
 };

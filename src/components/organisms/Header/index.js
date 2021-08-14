@@ -70,13 +70,18 @@ const StyledNavToggle = styled.button`
 		background-color: black;
 		transform-origin: right;
 		transition: transform 0.2s ease-out;
+		position: absolute;
 
-		&:nth-of-type(2) {
-			transform: scaleX(75%);
-			margin: 10px 0;
+		&:nth-child(1) {
+			top: 0;
 		}
 
-		&:nth-of-type(3) {
+		&:nth-child(2) {
+			transform: scaleX(75%) translateY(-50%);
+			top: 50%;
+		}
+
+		&:nth-child(3) {
 			transform: scaleX(50%);
 			bottom: 0;
 		}
@@ -84,16 +89,16 @@ const StyledNavToggle = styled.button`
 		${({ isToggled }) =>
 			isToggled &&
 			css`
-				&:nth-of-type(1) {
+				&:nth-child(1) {
 					transform-origin: top right;
 					transform: rotate(-45deg) translate(-4px, -8px);
 				}
 
-				&:nth-of-type(2) {
+				&:nth-child(2) {
 					transform: scaleX(0);
 				}
 
-				&:nth-of-type(3) {
+				&:nth-child(3) {
 					transform-origin: bottom right;
 					transform: rotate(45deg) translate(-4px, 8px) scaleX(100%);
 				}
@@ -113,6 +118,7 @@ const Header = () => {
 					<StaticImage
 						src="../../../assets/images/logo.svg"
 						alt="AMS elektronik"
+						placeholder="tracedSVG"
 					/>
 				</Link>
 			</StyledLogoWrapper>

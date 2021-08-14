@@ -124,6 +124,7 @@ const AboutTile = ({ data }) => (
 		<StyledParagraph secondary>{data.content}</StyledParagraph>
 		<StyledImage
 			image={data.image.localFile.childImageSharp.gatsbyImageData}
+			alt={data.content.substring(0, 50)}
 		/>
 	</StyledContainer>
 );

@@ -2,6 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
+import Seo from '../components/Seo';
+
 import Layout from '../components/layout';
 import { Container } from '../assets/styles/GlobalStyles';
 
@@ -105,6 +107,7 @@ const ArticlesPage = ({ data }) => {
 
 	return (
 		<Layout>
+			<Seo title="Artykuły z prasy branżowej" />
 			<StyledIntroWrapper>
 				<Heading>Artykuły z prasy branżowej</Heading>
 				<Paragraph>

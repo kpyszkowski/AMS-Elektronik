@@ -4,10 +4,8 @@ require('dotenv').config({
 
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby Default Starter`,
-		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-		author: `@gatsbyjs`,
-		siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+		title: `AMS Elektronik`,
+		description: `AMS elektronik zajmuje się produkcją i instalacją suszarń tarcicy oraz materiałów sypkich, systemów sterowania i wyposażenia suszarń.`,
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
@@ -58,18 +56,20 @@ module.exports = {
 		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
-		// {
-		// 	resolve: `gatsby-plugin-manifest`,
-		// 	options: {
-		// 		name: `gatsby-starter-default`,
-		// 		short_name: `starter`,
-		// 		start_url: `/`,
-		// 		background_color: `#663399`,
-		// 		theme_color: `#663399`,
-		// 		display: `minimal-ui`,
-		// 		icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-		// 	},
-		// },
+		{
+			resolve: `gatsby-plugin-manifest`,
+			options: {
+				name: `AMS Elektronik`,
+				short_name: `ams`,
+				lang: `pl`,
+				start_url: `/`,
+				background_color: `hsl(0,0%,100%)`,
+				theme_color: `hsl(222, 80%, 56%)`,
+				display: `standalone`,
+				icon: `src/assets/images/favicon.svg`,
+				crossOrigin: `anonymous`,
+			},
+		},
 		`gatsby-plugin-gatsby-cloud`,
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.dev/offline

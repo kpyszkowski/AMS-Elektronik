@@ -1,21 +1,21 @@
 import styled, { css } from 'styled-components';
 
 const Heading = styled.h1`
-	font-size: 56px;
+	font-size: 48px;
 	line-height: 160%;
 
 	${({ secondary }) =>
 		secondary &&
 		css`
 			font-size: 36px;
-			line-height: 220%;
+			line-height: 160%;
 		`}
 
 	${({ tertiary }) =>
 		tertiary &&
 		css`
 			font-size: 20px;
-			line-height: 260%;
+			line-height: 190%;
 		`}
 
     @media screen and (max-width: 865px) {

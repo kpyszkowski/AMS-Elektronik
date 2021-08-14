@@ -3,6 +3,8 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import { RichText } from '@graphcms/rich-text-react-renderer';
 
+import Seo from '../components/Seo';
+
 import Layout from '../components/layout';
 import { Container } from '../assets/styles/GlobalStyles';
 
@@ -18,6 +20,7 @@ export const query = graphql`
 			slug
 			content {
 				raw
+				text
 			}
 		}
 	}
@@ -63,8 +66,17 @@ const StyledParagraph = styled(Paragraph)`
 `;
 
 const OfferPage = ({ data }) => {
+	const description =
+		data.graphCmsOfferItem.content.text
+			.replace(/\\n/gm, ' ')
+			.replace(/^(.{160}[^\s]*).*/, '$1') + '...';
+
 	return (
 		<Layout>
+			<Seo
+				title={data.graphCmsOfferItem.title}
+				description={description}
+			/>
 			<OfferIntro>
 				<Heading>{data.graphCmsOfferItem.title}</Heading>
 			</OfferIntro>
