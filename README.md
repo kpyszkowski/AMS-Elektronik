@@ -22,5 +22,5 @@ AMS Elektronik website built with React and GatsbyJS. Application uses programma
 
 ## 🔥 Preview
 
-This website was created for commercial purpose and at the moment is under approval so it's not published. However it can be previewed here: [https://www.ams-elektronik-preview.netlify.app](https://www.ams-elektronik-preview.netlify.app "AMS Elektronik preview page")
+This website was created for commercial purpose and at the moment is under approval so it's not published. However it can be [previewed here](https://ams-elektronik-preview.netlify.app "AMS Elektronik preview page").
 
